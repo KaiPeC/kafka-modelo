@@ -5,7 +5,6 @@ import datetime
 from kafka import KafkaProducer
 from time import sleep
 
-toke = "3ArunJohLnObbzDbqdhTNT96n8WX4L4goyNEPvvm"
 
 
 from pyspark.sql import SparkSession
