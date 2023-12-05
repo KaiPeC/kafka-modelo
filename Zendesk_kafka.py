@@ -46,9 +46,9 @@ def get_last_process():
 body = []
 lenResponse = 1000
 iterationCount = 0
-URL = "https://atendimentomagazineluiza1550608095.zendesk.com/api/v2/incremental/tickets.json"
-# TOKEN = "3ArunJohLnObbzDbqdhTNT96n8WX4L4goyNEPvvm"
-TOKEN = "Basic a2FpcXVlLmJvcmdlc0BtYWdhemluZWx1aXphLmNvbS5ici90b2tlbjozQXJ1bkpvaExuT2JiekRicWRoVE5UOTZuOFdYNEw0Z295TkVQdnZt"
+URL = "url-hash"
+# TOKEN = "token-hash"
+TOKEN = "basic 64 token hash"
 time_ini = 1683299700
 
 # Starts iterations in API
