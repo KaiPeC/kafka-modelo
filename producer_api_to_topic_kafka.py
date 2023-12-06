@@ -100,39 +100,6 @@ while lenResponse == 1000 and iterationCount < 10:
             producer.send('kttm', json.dumps(row).encode('utf=8'))
             
 
-# Dataframe create
-# df = spark.sparkContext.parallelize(body).map(lambda x: json.dumps(x))
-# df = spark.read.json(df)
-
-# df2 = df.select(sf.col("name"),sf.to_json(sf.struct($"*"))).toDF("key", "value")
-# df2.show(false)
-
-# tup = rdd_to_tuple(dataframe_to_rdd(df))
-
-# for row in tup:
-#     producer.send('kttm', json.dumps(row).encode('utf=8'))
-#     print ('Message sent ', row)
-
-# df.selectExpr("CAST(id AS STRING) AS key", "to_json(struct(*)) AS value").show()
-
-# df.select(sf.to_json(sf.struct("*")).alias("value"))\
-#   .selectExpr("CAST(value AS STRING)")\
-#   .write\
-#   .format("console")\
-#   .option("kafka.bootstrap.servers", "localhost:9092")\
-#   .option("topic", "kttm")\
-#   .save()\
-
-# df.selectExpr("CAST(id AS STRING) AS key", "to_json(struct(*)) AS value")\
-#    .write\
-#    .format("kafka")\
-#    .mode("append")\
-#    .option("kafka.bootstrap.servers", "localhost:9092")\
-#    .option("topic", "josn_data_topic")\
-#    .save()
-
-
-
 spark.stop()
 
 
