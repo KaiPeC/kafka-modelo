@@ -8,9 +8,9 @@ Na pasta onde baixou o kafka inicie o zookeeper: bin/zookeeper-server-start.sh c
 
 Após isso inicei o kafka: bin/kafka-server-start.sh config/server.properties
 
-Com isso temos oq precisamos iniciado, após isso precisamos criar nosso topic kafka, que sera onde as mensagems serão publicadas. 
+Com o kafka e o zookeeper iniciado, podemos criar nosso topic kafka, que sera onde as mensagems serão publicadas. 
 
-Crie o topic com esse comando(subistitua o "kttm", pelo nome do topic que desejar) ./bin/kafka-topics.sh --create --topic kttm --bootstrap-server localhost:9092
+Crie o topic com esse comando: ./bin/kafka-topics.sh --create --topic <topicname> --bootstrap-server localhost:9092
 
 Após isso starte o banco mysql: sudo systemctl start mysql.service
 
@@ -24,5 +24,5 @@ Agora vamos criar nossa tabela com CREATE TABLE <nametable> (<coluna1> int NOT N
 
 Com isso temos nosso database com a tabela criada. 
 
-Agora precisa apenas adaptar os scripts publicados para o seu uso, o kafka consumer deve ficar ligado monitorando o kafka topic e o kafka producer na minha utilização sera executado de 5 em 5 min, para evitar rate limit na API. 
+Agora precisa apenas adaptar os scripts publicados para o seu uso, o kafka consumer deve ficar ligado monitorando o kafka topic, e o kafka producer na minha utilização sera executado de 5 em 5 min, para evitar rate limit na API. 
 
