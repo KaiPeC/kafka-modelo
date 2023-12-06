@@ -14,8 +14,8 @@ def save_to_mysql(df, batch_id):
     url = "jdbc:mysql://localhost:3306/TESTEKAFKA"
 
     df.write.jdbc(url=url+
-                  "?user=sammy&password=1998Kaique@",
-              table="zendesk_tickets",
+                  "?user=<user>&password=<password>",
+              table="tickets",
               mode="append",
               properties={"driver": 'com.mysql.cj.jdbc.Driver'})
 
@@ -33,7 +33,7 @@ def main():
         .master("local[2]") \
         .config("spark.sql.streaming.checkpointLocation", "checkpoint") \
         .config("spark.driver.host", "localhost")\
-        .config("spark.driver.extraClassPath", "/home/magalu/Downloads/teste/mysql-connector-j-8.2.0.jar")\
+        .config("spark.driver.extraClassPath", "/home/User/Downloads/teste/mysql-connector-j-8.2.0.jar")\
         .getOrCreate()
 #sua_tabela
     kafka_stream = spark \
